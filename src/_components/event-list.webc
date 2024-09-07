@@ -2,11 +2,22 @@
   const events = collections.events;
   console.log('in events');
 </script>
-<p>In Events</p>
-<p></p>
-<ul>
-  <li webc:for="event of events">
-    <h2 @text="event.data.title"></h2>
-    <h3 @html="event.content"></h3>
-  </li>
-</ul>
+<div>
+  <p>In Events</p>
+  <p></p>
+  <ul>
+    <li webc:for="event of events">
+      <div :style="`background-color:  ${event.data.background_color};`">
+        <h2 @text="event.data.title"></h2>
+        <h2 @text="event.data.background_color" | #121212></h2>
+        <h3 @html="event.content"></h3>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<style webc:scoped>
+  div {
+    font-size: 2rem;
+  }
+</style>

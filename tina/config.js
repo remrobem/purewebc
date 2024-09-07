@@ -31,7 +31,7 @@ export default defineConfig({
       {
         name: 'event',
         label: 'Events',
-        path: '_data/events',
+        path: 'src/_data/events',
         fields: [
           {
             type: 'string',
@@ -39,6 +39,18 @@ export default defineConfig({
             label: 'Title',
             isTitle: true,
             required: true,
+          },
+          {
+            type: 'string',
+            name: 'background_color',
+            label: 'Background Color',
+            description: 'Edit the event background color here',
+            ui: {
+              component: 'color',
+              colorFormat: 'hex',
+              colors: ['#EC4815', '#241748', '#B4F4E0', '#E6FAF8'],
+              widget: 'sketch',
+            },
           },
           {
             type: 'rich-text',
