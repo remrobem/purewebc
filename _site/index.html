@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- title coming from component, same format for any head data -->
+    <title>Webc rendering options</title>
+
+    <!-- Need to use when using style tag in component -->
+    <style>.wnkjwjoui p{color:green;font-size:2rem}
+.wnvo1ok21 p{color:darkmagenta}.wnvo1ok21 div{display:contents}
+.wboycowgv h3{color:red}
+body {
+    background-color: lightslategray;
+  }
+  custom-element {
+    display: contents;
+  }</style>
+    <!-- for js not scoped to a component - see custom-element.webc -->
+    <!-- adding type='module' for web-component.webc script processing deferred??
+      -->
+    <script type="module">window.customElements.define(
+    'web-component',
+    class extends HTMLElement {
+      connectedCallback() {
+        const button = this.querySelector(':scope button');
+        button.addEventListener('click', () => {
+          console.log('Hello fom the web component');
+        });
+      }
+    }
+  );
+window.customElements.define(
+    'dynamic-button',
+    class extends HTMLElement {
+      connectedCallback() {
+        const button = this.querySelector(':scope button');
+        button.addEventListener('click', () => {
+          console.log('Dynamic button works');
+        });
+      }
+    }
+  );</script>
+  </head>
+  <body>
+    <main-body><!-- Overloading standard HTML element  -->WebC *is* HTML.
+<header class="wnkjwjoui">
+  <p>This is the header</p>
+</header>
+
+
+
+<h2>Simple Template</h2>
+
+<!-- webc:is Best used in index header meta data. Acts same as simple-template -->
+<h2>Replace Element Component</h2>
+
+<h2> Dynamic content from the year 2024</h2>
+    
+
+<custom-element class="wnvo1ok21"><!-- the style causes an element name custom-element to be gnerated --><div>
+  <p>Custom Element Component</p>
+  
+</div>
+
+
+</custom-element>
+<web-component><!-- This is a TRUE web component --><!-- so the man says --><!-- https://www.youtube.com/watch?v=0I3yQxukg2k&list=PLvs2bp5vjp2ZXcx_htXlae1Jmm0oSSYF2&index=3 --><!-- at 19 minutes --><button type="button">Log to Console</button>
+
+
+</web-component>
+<dynamic-button><!-- runs onclick client side but uses custom element  --><button type="button">Dynamic Button</button>
+
+
+</dynamic-button>
+
+<p>In Events</p>
+<p></p>
+<ul>
+  <li>
+    <h2>Sample Event 1</h2>
+    <h3><p>This is a sample event description 1.</p>
+</h3>
+  </li>
+<li>
+    <h2>Sample Event 2</h2>
+    <h3><p>This is a sample event description 2.<br>
+abcd</p>
+</h3>
+  </li>
+</ul>
+
+<footer class="wboycowgv"><!-- Overloading standard HTML element  --><h3>This is the footer</h3>
+
+
+</footer>
+
+<!-- Mot Scoped to only this component. Applies to all components -->
+
+</main-body>
+  
+
+</body>
+</html>

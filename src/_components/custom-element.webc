@@ -1,0 +1,15 @@
+<!-- the style causes an element name custom-element to be gnerated -->
+
+<div>
+  <p webc:if="true">Custom Element Component</p>
+  <p webc:if="false">Should NOT display</p>
+</div>
+
+<style webc:scoped>
+  p {
+    color: darkmagenta;
+  }
+  div {
+    display: contents;
+  }
+</style>

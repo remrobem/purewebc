@@ -1,0 +1,22 @@
+{
+  "name": "purewebc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx eleventy --serve",
+    "tina": "tinacms dev -c \"eleventy --serve\"",
+    "build": "tinacms build && eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@tinacms/cli": "^1.6.2"
+  },
+  "dependencies": {
+    "@11ty/eleventy-plugin-webc": "^0.11.2",
+    "tinacms": "^2.2.2"
+  }
+}

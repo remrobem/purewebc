@@ -1,0 +1,20 @@
+<!-- This is a TRUE web component -->
+<!-- so the man says -->
+<!-- https://www.youtube.com/watch?v=0I3yQxukg2k&list=PLvs2bp5vjp2ZXcx_htXlae1Jmm0oSSYF2&index=3 -->
+<!-- at 19 minutes -->
+
+<button type="button">Log to Console</button>
+
+<script>
+  window.customElements.define(
+    'web-component',
+    class extends HTMLElement {
+      connectedCallback() {
+        const button = this.querySelector(':scope button');
+        button.addEventListener('click', () => {
+          console.log('Hello fom the web component');
+        });
+      }
+    }
+  );
+</script>

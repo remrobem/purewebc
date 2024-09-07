@@ -1,0 +1,12 @@
+<script webc:setup>
+  const events = collections.events;
+  console.log('in events');
+</script>
+<p>In Events</p>
+<p></p>
+<ul>
+  <li webc:for="event of events">
+    <h2 @text="event.data.title"></h2>
+    <h3 @html="event.content"></h3>
+  </li>
+</ul>

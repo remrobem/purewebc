@@ -1,0 +1,10 @@
+<header webc:root="override">
+  <p>This is the header</p>
+</header>
+
+<style webc:scoped>
+  p {
+    color: green;
+    font-size: 2rem;
+  }
+</style>

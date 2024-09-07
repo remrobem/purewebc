@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- title coming from component, same format for any head data -->
+    <title webc:is="meta-title"></title>
+    <!-- Need to use when using style tag in component -->
+    <style @raw="getBundle('css')" webc:keep></style>
+    <!-- for js not scoped to a component - see custom-element.webc -->
+    <!-- adding type='module' for web-component.webc script processing deferred??
+      -->
+    <script type="module" @raw="getBundle('js')" webc:keep></script>
+  </head>
+  <body>
+    <main-body></main-body>
+  </body>
+</html>

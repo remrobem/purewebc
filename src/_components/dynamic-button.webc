@@ -1,0 +1,17 @@
+<!-- runs onclick client side but uses custom element  -->
+
+<button type="button">Dynamic Button</button>
+
+<script>
+  window.customElements.define(
+    'dynamic-button',
+    class extends HTMLElement {
+      connectedCallback() {
+        const button = this.querySelector(':scope button');
+        button.addEventListener('click', () => {
+          console.log('Dynamic button works');
+        });
+      }
+    }
+  );
+</script>
