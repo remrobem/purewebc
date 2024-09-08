@@ -2,22 +2,33 @@
   const events = collections.events;
   console.log('in events');
 </script>
+
+<style webc:scoped>
+  div {
+    font-size: 2rem;
+    /* background-color: 'event.data.background_color'; */
+  }
+
+  /* Dynamic styles */
+  /* <style webc:for='event of events' > .event-item-@{event.id} {
+    background-color: @{event.background_color};
+  } */
+</style>
+</style>
+
 <div>
   <p>In Events</p>
   <p></p>
-  <ul>
-    <li webc:for="event of events">
-      <div :style="`background-color:  ${event.data.background_color};`">
+  <ul webc:for="event of events">
+    <li>
+      <!-- <div :style="`background-color:  ${event.data.background_color};`"> -->
+      <div>
         <h2 @text="event.data.title"></h2>
-        <h2 @text="event.data.background_color" | #121212></h2>
-        <h3 @html="event.content"></h3>
+        <h2 @text="event.data.background_color"></h2>
+        <!-- <h3 @html="event.content"></h3> -->
       </div>
     </li>
   </ul>
 </div>
 
-<style webc:scoped>
-  div {
-    font-size: 2rem;
-  }
-</style>
+

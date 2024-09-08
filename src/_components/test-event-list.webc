@@ -1,0 +1,49 @@
+<!-- my-event-list.webc -->
+
+<script webc:type="js" webc:is="template">
+  // This script block is used to define the component's behavior and data
+  module.exports = class {
+    data() {
+      // In a real 11ty project, you'd likely fetch this data from Markdown files or other sources
+      return {
+        events: [
+          {
+            title: 'Annual Conference',
+            category: 'conference',
+            color: '#ff0000',
+          },
+          { title: 'Coding Workshop', category: 'workshop', color: '#00ff00' },
+          { title: 'Networking Mixer', category: 'social', color: '#0000ff' },
+        ],
+      };
+    }
+  };
+</script>
+
+<style webc:scoped>
+  .event-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .event-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  /* Dynamic styles */
+  <% for (const event of this.events) { %>
+  .event-item.<%= event.category %> {
+    background-color: <%= event.color %>;
+    color: white;
+  }
+  <% } %>
+</style>
+
+<ul class="event-list">
+  <li webc:for="event of this.events" :class="`event-item ${event.category}`">
+    <h3><%= event.title %></h3>
+    <p>Category: <%= event.category %></p>
+  </li>
+</ul>

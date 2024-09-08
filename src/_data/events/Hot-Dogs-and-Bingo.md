@@ -1,6 +1,8 @@
 ---
 title: Hot Dogs and Bingo
-background_color: '#F09292'
+id: '3'
+color: '#F09292'
+category: 'hij'
 ---
 
 # Be there

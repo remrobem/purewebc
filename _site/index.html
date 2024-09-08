@@ -8,7 +8,7 @@
     <!-- Need to use when using style tag in component -->
     <style>.wnkjwjoui p{color:green;font-size:2rem}
 .wnvo1ok21 p{color:darkmagenta}.wnvo1ok21 div{display:contents}
-.w1lyqxoik div{font-size:2rem}
+.ww4b6m2w5 .event-list{list-style-type:none;padding:0}.ww4b6m2w5 .event-item{margin-bottom:10px;padding:10px;border-radius:5px}{% for event in collections.events %}.ww4b6m2w5 .event-item-{{ event.data.category }}{background-color:{{ event.data.color }};color:white}{% endfor %}
 .wboycowgv h3{color:red}
 body {
     background-color: lightslategray;
@@ -73,44 +73,21 @@ window.customElements.define(
 
 
 </dynamic-button>
-<event-list class="w1lyqxoik">
-<div>
-  <p>In Events</p>
-  <p></p>
-  <ul>
-    <li>
-      <div style="background-color:  undefined">
-        <h2>Sample Event 1</h2>
-        <h2 | #121212></h2>
-        <h3><p>This is a sample event description 1.</p>
-</h3>
-      </div>
-    </li>
-<li>
-      <div style="background-color:  undefined">
-        <h2>Sample Event 2</h2>
-        <h2 | #121212></h2>
-        <h3><p>This is a sample event description 2.<br>
-abcd</p>
-</h3>
-      </div>
-    </li>
-<li>
-      <div style="background-color:  #F09292">
-        <h2>Hot Dogs and Bingo</h2>
-        <h2 | #121212>#F09292</h2>
-        <h3><h1>Be there</h1>
-<h3>Win a prize</h3>
-<p>Eat Hot dogs</p>
-<p>Learn how to spell BINGO</p>
-</h3>
-      </div>
-    </li>
-  </ul>
-</div>
+<!-- <event-list></event-list> -->
+<event-list-claude class="ww4b6m2w5">
 
 
-</event-list>
+  {% for event in collections.events %}
+  <li class="event-item-{{ event.data.category }}">
+    <h3>{{ event.data.title }}</h3>
+    <p>Category: <span>{{ event.data.category }}</span></p>
+    <div>{{ event.content | safe }}</div>
+  </li>
+  {% endfor %}
+
+</event-list-claude>
+
+<!-- <test-event-list></test-event-list> -->
 <footer class="wboycowgv"><!-- Overloading standard HTML element  --><h3>This is the footer</h3>
 
 

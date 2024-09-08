@@ -9,7 +9,10 @@ WebC *is* HTML.
 <custom-element></custom-element>
 <web-component></web-component>
 <dynamic-button></dynamic-button>
-<event-list></event-list>
+<!-- <event-list></event-list> -->
+<event-list-claude></event-list-claude>
+
+<!-- <test-event-list></test-event-list> -->
 <footer></footer>
 
 <!-- Mot Scoped to only this component. Applies to all components -->
